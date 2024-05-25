@@ -215,8 +215,7 @@ main {
 
 .cardsExperience {
     width: 100%;
-    max-width: 15vw;
-    height: 13rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,6 +226,11 @@ main {
     padding: 1rem;
     box-sizing: border-box;
     perspective: 700px;
+    margin-bottom: 2rem; /* Espaçamento inferior entre os cards */
+}
+
+.cardsExperienceFullWidth {
+    max-width: calc(15vw - 2rem); /* Largura máxima considerando o espaçamento */
 }
 
 .cardsExperience img {
@@ -521,36 +525,24 @@ main {
 
     .divExperiences {
         display: flex;
-        flex-wrap: wrap; /* Adjust to wrap for better layout */
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        gap: 1rem; /* Adjust gap for better spacing */
+        gap: 2rem; /* Espaçamento entre os cards */
     }
 
     .cardsExperience {
         width: 100%;
-        max-width: 45vw; /* Adjust width for better spacing */
-        height: auto; /* Adjust height to auto */
-        display: flex;
-        flex-direction: column; /* Adjust to column for better layout */
-        align-items: center; /* Center align items */
-        justify-content: center;
-        gap: 1rem;
-        border-radius: 25px;
-        text-align: center; /* Center text */
-        padding: 1rem;
-        box-sizing: border-box; /* Add padding for better spacing */
-        perspective: 700px;
+        max-width: calc(45vw - 2rem); /* Largura máxima considerando o espaçamento */
+        margin-bottom: 2rem; /* Espaçamento inferior entre os cards */
+        min-height: 200px; /* Definindo uma altura mínima para os cards */
     }
 
     .cardsExperience img {
-        width: 5rem; /* Adjust image size */
-        border-radius: 20px;
+        width: 5rem; /* Ajusta o tamanho da imagem */
     }
 
     .cardsExperience p {
-        font-size: 0.9rem; /* Adjust font size */
-        color: var(--backgroundLight);
+        font-size: 1rem; /* Ajusta o tamanho do texto */
     }
 
     .btnCurriculo {
