@@ -1,0 +1,559 @@
+:root {
+    --backgroundDark: #03001C;
+    --navbarDark: #301E67;
+    --backgroundItensDark: #5B8FB9;
+    --textDark: #DDE6ED;
+    --backgroundLight: #F9F7F7;
+    --navbarLight: #DBE2EF;
+    --backgroundItensLight: #3F72AF;
+    --textLight: #112D4E;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--backgroundLight);
+    margin: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+#changeTheme {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--navbarLight);
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.itens-navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.itens-navbar a {
+    position: relative;
+    padding-bottom: 0.15rem;
+}
+
+.itens-navbar a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--backgroundItensLight);
+    transition: all 0.3s ease;
+}
+
+.itens-navbar a:hover::after {
+    width: 75%;
+}
+
+.links-navbar {
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--textLight);
+}
+
+.bi {
+    color: var(--textLight);
+    font-size: 1.5rem;
+    padding-bottom: 0.15rem;
+    cursor: pointer;
+}
+
+.bi-moon {
+    display: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 15rem;
+    gap: 5vw;
+    cursor: default;
+    padding: 0 10vw;
+    box-sizing: border-box;
+}
+
+.aboutMe {
+    color: var(--textLight);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.aboutMe h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.aboutMe h1 span {
+    color: var(--backgroundLight);
+    text-shadow: var(--textLight) 2px -2px, var(--textLight) -2px 2px, var(--textLight) 2px 2px, var(--textLight) -2px -2px;
+}
+
+.aboutMe p {
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.image-about {
+    width: 30vw;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.habilidades {
+    margin-top: 15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.title {
+    margin-bottom: 3rem;
+}
+
+.title h1 {
+    display: inline-block;
+    position: relative;
+    border-bottom: 6px solid var(--backgroundItensDark);
+}
+
+.div-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.cardsSkills {
+    background-color: var(--backgroundItensLight);
+    width: 100%;
+    max-width: 15vw;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 25px;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cardsSkills img {
+    width: 5rem;
+}
+
+.cardsSkills p {
+    font-size: 1rem;
+    color: var(--backgroundLight);
+}
+
+.experiences {
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.divExperiences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.cardsExperience {
+    width: 100%;
+    max-width: 15vw;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: 25px;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    perspective: 700px;
+}
+
+.cardsExperience img {
+    width: 6rem;
+    border-radius: 20px;
+}
+
+.cardsExperience p {
+    font-size: 1.2rem;
+    color: var(--backgroundLight);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.front {
+    background: var(--backgroundItensLight);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.front p {
+    font-size: 1rem;
+}
+
+.back {
+    background: var(--backgroundItensLight);
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.back p {
+    font-size: 1rem;
+}
+
+.cardsExperience:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+.cardsExperience:hover .back {
+    transform: rotateY(0);
+    z-index: 1;
+}
+
+.rodape {
+    background-color: var(--backgroundItensLight);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    margin-top: 10rem;
+}
+
+.rodape .title {
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.rodape .title h1 {
+    display: inline-block;
+    position: relative;
+    border-bottom: 6px solid var(--backgroundItensDark);
+}
+
+.rodapeIcones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.rodapeIcones p {
+    font-size: 1.3rem;
+}
+
+.iconesRodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.iconesRodape img {
+    width: 3rem;
+}
+
+.iconesRodape button {
+    border-radius: 10px;
+    padding: 1rem;
+    border: none;
+    background-color: blue;
+    color: var(--backgroundLight);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.iconesRodape button:hover {
+    -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.75);
+    scale: 1.01;
+}
+
+.dark {
+    background-color: var(--backgroundDark);
+}
+
+.dark .header {
+    background-color: var(--navbarDark);
+}
+
+.dark .links-navbar {
+    color: var(--textDark);
+}
+
+.dark .bi {
+    color: var(--textDark);
+}
+
+.dark .bi-sun {
+    display: none;
+}
+
+.dark .bi-moon {
+    display: block;
+}
+
+.dark .aboutMe {
+    color: var(--textDark);
+}
+
+.dark .aboutMe h1 span {
+    color: var(--backgroundDark);
+    text-shadow: var(--textDark) 2px -2px, var(--textDark) -2px 2px, var(--textDark) 2px 2px, var(--textDark) -2px -2px;
+}
+
+.dark .title h1 {
+    color: var(--textDark);
+    border-color: var(--backgroundItensLight);
+}
+
+.dark .cardsSkills {
+    background-color: var(--textLight);
+}
+
+.dark .cardsSkills p {
+    color: var(--textDark);
+}
+
+.dark .cardsExperience p {
+    color: var(--textDark);
+}
+
+.dark .front {
+    background-color: var(--textLight);
+}
+
+.dark .back {
+    background-color: var(--textLight);
+}
+
+.dark .rodape {
+    background-color: var(--textLight);
+}
+
+.dark .rodape .title h1 {
+    border-color: var(--backgroundItensLight);
+}
+
+.dark .rodape .rodapeIcones p {
+    color: var(--textDark);
+}
+
+@media (max-width: 768px) {
+    .itens-navbar {
+        gap: 10px;
+    }
+
+    .links-navbar {
+        font-weight: 600;
+        font-size: 0.7rem;
+    }
+
+    .bi {
+        font-size: 1rem;
+    }
+
+    .container-about {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 15rem;
+        cursor: default;
+        box-sizing: border-box;
+        padding: 0 2rem; /* Add padding for better spacing */
+    }
+
+    .aboutMe {
+        width: 100%;
+        text-align: center;
+        padding: 0 1rem; /* Add padding for better spacing */
+    }
+
+    .aboutMe h1 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    .aboutMe h1 span {
+        color: var(--backgroundLight);
+        text-shadow: var(--textLight) 1px -1px, var(--textLight) -1px 1px, var(--textLight) 1px 1px, var(--textLight) -1px -1px;
+    }
+
+    .aboutMe p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .image-about {
+        display: none;
+    }
+
+    .habilidades {
+        margin-top: 9rem;
+        width: 100%;
+        padding: 0 2rem; /* Add padding for better spacing */
+    }
+
+    .div-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem; /* Adjust gap for better spacing */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardsSkills {
+        background-color: var(--backgroundItensLight);
+        max-width: 45vw; /* Adjust width for better spacing */
+        height: auto; /* Adjust height to auto */
+        display: flex;
+        flex-direction: column; /* Adjust to column for better layout */
+        align-items: center; /* Center align items */
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        box-sizing: border-box; /* Add padding for better spacing */
+        text-align: center; /* Center text */
+    }
+
+    .cardsSkills img {
+        width: 3rem; /* Adjust image size */
+    }
+
+    .cardsSkills p {
+        font-size: 0.9rem; /* Adjust font size */
+        color: var(--backgroundLight);
+    }
+
+    .experiences {
+        margin-top: 5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem; /* Add padding for better spacing */
+    }
+
+    .divExperiences {
+        display: flex;
+        flex-wrap: wrap; /* Adjust to wrap for better layout */
+        justify-content: center;
+        align-items: center;
+        gap: 1rem; /* Adjust gap for better spacing */
+    }
+
+    .cardsExperience {
+        width: 100%;
+        max-width: 45vw; /* Adjust width for better spacing */
+        height: auto; /* Adjust height to auto */
+        display: flex;
+        flex-direction: column; /* Adjust to column for better layout */
+        align-items: center; /* Center align items */
+        justify-content: center;
+        gap: 1rem;
+        border-radius: 25px;
+        text-align: center; /* Center text */
+        padding: 1rem;
+        box-sizing: border-box; /* Add padding for better spacing */
+        perspective: 700px;
+    }
+
+    .cardsExperience img {
+        width: 5rem; /* Adjust image size */
+        border-radius: 20px;
+    }
+
+    .cardsExperience p {
+        font-size: 0.9rem; /* Adjust font size */
+        color: var(--backgroundLight);
+    }
+
+    .btnCurriculo {
+        font-size: 0.7rem;
+    }
+}

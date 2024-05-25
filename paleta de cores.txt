@@ -1,0 +1,11 @@
+->Dark<-
+background: #03001C
+background-items/navbar: #301E67
+bordas: #5B8FB9
+texto: #DDE6ED
+
+->Light<-
+background: #F9F7F7
+background-itens/navbar: #DBE2EF
+bordas: #3F72AF
+texto: #112D4E

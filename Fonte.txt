@@ -1,0 +1,10 @@
+Links:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+CSS:
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
